@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
@@ -18,6 +19,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import pl.nemolab.weatherexperience.data.Weather;
 import pl.nemolab.weatherexperience.data.WeatherResponse;
+import pl.nemolab.weatherexperience.util.ReadableDate;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -62,6 +64,12 @@ public class MainActivity extends ActionBarActivity {
                         Weather weather = weathers.get(0);
                         txtLog.setText(weather.getMain() + " / " + weather.getDescription());
                     }
+                    String datetime = ReadableDate.formatTime(weatherResponse.getDt());
+                    String sunrise = ReadableDate.formatTime(weatherResponse.getSys().getSunrise());
+                    String sunset = ReadableDate.formatTime(weatherResponse.getSys().getSunset());
+                    txtLog.append("\ndatetime: " + datetime);
+                    txtLog.append("\nsunrise: " + sunrise);
+                    txtLog.append("\nsunset: " + sunset);
                 }
             }
 

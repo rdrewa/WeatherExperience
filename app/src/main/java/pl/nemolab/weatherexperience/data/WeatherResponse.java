@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class WeatherResponse {
 
     private int id;
-    private int dt;
+    private long dt;
     private String name;
     private int cod;
     private ArrayList<Weather> weather;
@@ -23,11 +23,11 @@ public class WeatherResponse {
         this.id = id;
     }
 
-    public int getDt() {
+    public long getDt() {
         return dt;
     }
 
-    public void setDt(int dt) {
+    public void setDt(long dt) {
         this.dt = dt;
     }
 
