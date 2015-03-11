@@ -11,6 +11,9 @@ public class WeatherResponse {
     private ArrayList<Weather> weather;
     private Main main;
     private Sys sys;
+    private String base;
+    private Coord coord;
+    private Wind wind;
 
     public int getId() {
         return id;
@@ -66,5 +69,29 @@ public class WeatherResponse {
 
     public void setSys(Sys sys) {
         this.sys = sys;
+    }
+
+    public String getBase() {
+        return base;
+    }
+
+    public void setBase(String base) {
+        this.base = base;
+    }
+
+    public Coord getCoord() {
+        return coord;
+    }
+
+    public void setCoord(Coord coord) {
+        this.coord = coord;
+    }
+
+    public Wind getWind() {
+        return wind;
+    }
+
+    public void setWind(Wind wind) {
+        this.wind = wind;
     }
 }

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 public class Main {
 
     private float temp;
-    private int pressure;
+    private float pressure;
     @SerializedName("temp_min")
     private float tempMin;
     @SerializedName("temp_max")
@@ -20,7 +20,7 @@ public class Main {
         this.temp = temp;
     }
 
-    public int getPressure() {
+    public float getPressure() {
         return pressure;
     }
 
