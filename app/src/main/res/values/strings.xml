@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">WeatherExperience</string>
-
+    <string name="app_name">Weather Experience</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="edt_location_hint_normal">Wpisz lokalizację</string>
+    <string name="edt_location_hint_choose">Wybierz z listy</string>
+    <string name="btn_search_text">Szukaj</string>
 </resources>
