@@ -1,5 +1,6 @@
 package pl.nemolab.weatherexperience;
 
+import pl.nemolab.weatherexperience.data.ForecastResponse;
 import pl.nemolab.weatherexperience.data.WeatherResponse;
 import retrofit.Callback;
 import retrofit.http.GET;
@@ -21,6 +22,6 @@ public class OpenWeatherMapApi {
 
     public interface Forecast {
         @GET("/forecast/daily")
-        void getWeekForecast(@Query("q") String location);
+        void getWeekForecast(@Query("q") String location, Callback<ForecastResponse> cb);
     }
 }

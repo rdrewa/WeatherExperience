@@ -1,13 +1,17 @@
 package pl.nemolab.weatherexperience.data;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 public class WeatherResponse {
 
     private int id;
-    private long dt;
+    @SerializedName("datetime")
+    private long datetime;
     private String name;
-    private int cod;
+    @SerializedName("code")
+    private int code;
     private ArrayList<Weather> weather;
     private Main main;
     private Sys sys;
@@ -23,12 +27,12 @@ public class WeatherResponse {
         this.id = id;
     }
 
-    public long getDt() {
-        return dt;
+    public long getDatetime() {
+        return datetime;
     }
 
-    public void setDt(long dt) {
-        this.dt = dt;
+    public void setDatetime(long datetime) {
+        this.datetime = datetime;
     }
 
     public String getName() {
@@ -39,12 +43,12 @@ public class WeatherResponse {
         this.name = name;
     }
 
-    public int getCod() {
-        return cod;
+    public int getCode() {
+        return code;
     }
 
-    public void setCod(int cod) {
-        this.cod = cod;
+    public void setCode(int code) {
+        this.code = code;
     }
 
     public ArrayList<Weather> getWeather() {

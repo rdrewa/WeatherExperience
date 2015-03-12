@@ -5,4 +5,5 @@
     <string name="edt_location_hint_normal">Wpisz lokalizację</string>
     <string name="edt_location_hint_choose">Wybierz z listy</string>
     <string name="btn_search_text">Szukaj</string>
+    <string name="wrong_request">Wrong request</string>
 </resources>
