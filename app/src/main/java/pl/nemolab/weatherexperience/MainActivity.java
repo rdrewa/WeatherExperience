@@ -16,10 +16,12 @@ import com.j256.ormlite.dao.Dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import pl.nemolab.weatherexperience.adapter.ForecastAdapter;
 import pl.nemolab.weatherexperience.data.City;
 import pl.nemolab.weatherexperience.data.Coord;
 import pl.nemolab.weatherexperience.data.Forecast;
@@ -51,6 +53,7 @@ public class MainActivity extends ActionBarActivity {
     ListView listForecasts;
 
     private DatabaseHelper databaseHelper;
+    private ForecastAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,6 +125,7 @@ public class MainActivity extends ActionBarActivity {
                     }
 
                     if (queryEntryId > 0) {
+                        List<ForecastEntry> forecasts = new ArrayList<ForecastEntry>();
                         try {
                             QueryEntry storedQuery = queryDao.queryForId(queryEntryId);
                             txtLog.setText("");
@@ -133,7 +137,10 @@ public class MainActivity extends ActionBarActivity {
                                 sb.append("(" + storedForecast.getMain() + ")");
                                 sb.append("\n");
                                 txtLog.append(sb.toString());
+                                forecasts.add(storedForecast);
                             }
+                            adapter = new ForecastAdapter(getApplicationContext(), forecasts);
+                            listForecasts.setAdapter(adapter);
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }

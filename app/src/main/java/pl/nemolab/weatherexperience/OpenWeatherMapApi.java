@@ -10,6 +10,7 @@ import retrofit.http.Query;
  * Created by senator on 2015-03-07.
  */
 public class OpenWeatherMapApi {
+    public static final String ICON_URL = "http://openweathermap.org/img/w/";
     public static final String TAG = "WEATHER-API";
 
     public interface Weather {
