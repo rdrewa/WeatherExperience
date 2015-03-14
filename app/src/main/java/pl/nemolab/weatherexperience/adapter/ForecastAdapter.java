@@ -48,7 +48,7 @@ public class ForecastAdapter extends ArrayAdapter<ForecastEntry> {
         holder.txtNight.setText(toCelsius(forecast.getNight()));
         holder.txtPressure.setText(String.valueOf(forecast.getPressure()));
         holder.txtHumidity.setText(String.valueOf(forecast.getHumidity()));
-        String iconUrl = OpenWeatherMapApi.ICON_URL + forecast.getIcon();
+        String iconUrl = OpenWeatherMapApi.ICON_URL + forecast.getIcon() + ".png";
         Picasso.with(getContext()).load(iconUrl).into(holder.imgIcon);
         return convertView;
     }
